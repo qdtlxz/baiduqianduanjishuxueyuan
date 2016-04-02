@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task12 前端讨论小组</title>
+	<!-- 实现单双行列不同颜色，且前三行特殊表示的表格 -->
+	<!-- 实现正常状态和focus状态宽度不一致的input文本输入框，且鼠标焦点进入输入框时，宽度的变化以动画呈现 -->
+	<!-- 不使用JavaScript，实现一个Banner图轮流播放的效果，且点击右下角的1，2，3可以切换到对应Banner图片  -->
+	<style type="text/css">
+		*{
+			padding: 0; 
+		}
+		/*表格*/
+		tr:nth-child(odd){
+			background-color: #ccc;
+		}
+		tr:nth-child(even){
+			background-color: #fff;
+		}
+		.tableOut tr th{
+			background-color: #000; color:#fff;
+		}
+		tr:nth-child(2),tr:nth-child(3),tr:nth-child(4){
+			color:#f00;
+		}
+		/*输入框*/
+		.inputTxt{
+			width:100px; height: 20px; line-height: 20px; margin-top: 50px;
+		}
+		.inputTxt:focus{
+			-webkit-transition: width .5s linear;
+			-o-transition: width .5s linear;
+			transition: width .5s linear;
+			width: 160px;
+		}
+		/*轮播图*/
+		.wraplb{
+			width: 300px; height:140px; position: relative; margin-top: 50px;  overflow: hidden;
+		}
+		.content{
+			width: 900px; height: 100%; overflow: hidden;
+		}
+		ol,ul,li,dl,dd{
+			list-style: none; margin: 0; 
+		}
+		.content li{
+			height: 100%; width: 300px; display: block; float: left;
+		}
+		.red{
+			background-color: #f00;
+		}
+		.green{
+			background-color: #00f;
+		}
+		.blue{
+			background-color: #0f0;
+		}
+		.num{
+			position: absolute; bottom: 10px; right: 10px; width: auto; height: 25px;
+		}
+		.num dd{
+			width:25px; height: 25px; background: rgba(255,255,255,.7); color: #fff; cursor: pointer;
+			margin-left: 4px; float: left; text-align: center; line-height: 25px; position: relative;
+		}
+		.num dd>label{
+			display: block; width: 100%; height: 100%; z-index: 2; cursor: pointer;
+		}
+		@keyframes firstType{
+			from{
+				transform:translate3d(-600px,0px,0px)
+			}
+			to{
+				transform:translate3d(0px,0px,0px)
+			}
+		}
+		@-webkit-keyframes firstType{
+			from{
+				-webkit-transform:translate3d(-600px,0px,0px)
+			}
+			to{
+				-webkit-transform:translate3d(0px,0px,0px)
+			}
+		}
+		@keyframes secondType{
+			from{
+				transform:translate3d(0px,0px,0px)
+			}
+			to{
+				transform:translate3d(-300px,0px,0px)
+			}
+		}
+		@-webkit-keyframes secondType{
+			from{
+				-webkit-transform:translate3d(0px,0px,0px)
+			}
+			to{
+				-webkit-transform:translate3d(-300px,0px,0px)
+			}
+		}
+		@keyframes thirdType{
+			from{
+				transform:translate3d(-300px,0px,0px)
+			}
+			to{
+				transform:translate3d(-600px,0px,0px)
+			}
+		}
+		@-webkit-keyframes thirdType{
+			from{
+				-webkit-transform:translate3d(-300px,0px,0px)
+			}
+			to{
+				-webkit-transform:translate3d(-600px,0px,0px)
+			}
+		}
+		#radioRed:checked ~ .content{
+			animation:firstType .5s linear forwards;
+			-webkit-animation:firstType .5s linear forwards;
+		}
+		#radioGreen:checked ~ .content{
+			animation:secondType .5s linear forwards;
+			-webkit-animation:secondType .5s linear forwards;
+		}
+		#radioBlue:checked ~ .content{
+			animation:third .5s linear forwards;
+			-webkit-animation:thirdType .5s linear forwards;
+		}
+		input[type='radio']{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<table class='tableOut'>
+		<tr>
+			<th>排名</th>
+			<th>网站</th>
+			<th>热度</th>
+		</tr>
+		<tr>
+			<td>1.</td>
+			<td>百度前端技术学院</td>
+			<td>13000</td>
+		</tr>
+		<tr>
+			<td>2.</td>
+			<td>百度前端技术学院</td>
+			<td>12000</td>
+		</tr>
+		<tr>
+			<td>3.</td>
+			<td>百度前端技术学院</td>
+			<td>11000</td>
+		</tr>
+		<tr>
+			<td>4.</td>
+			<td>百度前端技术学院</td>
+			<td>10000</td>
+		</tr>
+		<tr>
+			<td>5.</td>
+			<td>百度前端技术学院</td>
+			<td>9000</td>
+		</tr>
+		<tr>
+			<td>6.</td>
+			<td>百度前端技术学院</td>
+			<td>8000</td>
+		</tr>
+		<tr>
+			<td>7.</td>
+			<td>百度前端技术学院</td>
+			<td>7000</td>
+		</tr>
+		<tr>
+			<td>8.</td>
+			<td>百度前端技术学院</td>
+			<td>7000</td>
+		</tr>
+		<tr>
+			<td>9.</td>
+			<td>百度前端技术学院</td>
+			<td>6000</td>
+		</tr>
+		<tr>
+			<td>10.</td>
+			<td>百度前端技术学院</td>
+			<td>4000</td>
+		</tr>
+	</table>
+
+	<input type='text' class='inputTxt'/>
+
+	<div class='wraplb'>
+		<input type='radio' id='radioRed' name='banner'>
+		<input type='radio' id='radioGreen' name='banner'>
+		<input type='radio' id='radioBlue' name='banner'>
+		<ul class='content'>
+			<li class='red'></li>
+			<li class='green'></li>
+			<li class='blue'></li>
+		</ul>
+		<dl class='num'>
+			<dd><label for='radioRed'>1</label></dd>
+			<dd><label for='radioGreen'>2</label></dd>
+			<dd><label for='radioBlue'>3</label></dd>
+		</dl>
+	</div>
+</body>
+</html>

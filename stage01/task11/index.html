@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task1_11</title>
+    <link rel="stylesheet" href="css/task11.css">
+    <script>
+        (function(win) {
+            var timeout,
+                doc = win.document, 
+                html = doc.documentElement;
+            function setFontSize() {
+                var htmlWidth = html.getBoundingClientRect().width;
+                var ratio = htmlWidth / 320;
+                if(htmlWidth < 320) {
+                    win.rem = ratio * 6.25;
+                } else {
+                // 10/16 默认字体大小16px, 100px 为1rem
+                    win.rem = 6.25;
+
+                }
+                win.responseRatio = ratio;
+                html.style.fontSize = win.rem + "rem";
+            }
+            win.addEventListener("resize", function() {
+                clearTimeout(timeout), timeout = setTimeout(setFontSize, 300);
+            }, false);
+            setFontSize();
+        })(window);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="headBar">
+            <a href="#" class="headBack"><img src="images/back.png" alt="">返回</a>
+            <span class="headTitle">这是标题</span>
+        </div>
+        <div class="nav flex">
+            <div class="navItem">导航</div>
+            <div class="navItem selected">导航</div>
+            <div class="navItem">导航</div>
+            <div class="navItem">导航</div>
+            <div class="navItem">导航</div>
+        </div>
+        <div class="banner">
+        </div>
+        <div class="tag flex">
+            <div class="tagItem"><img src="images/tag.png" alt=""><p>标签</p></div>
+            <div class="tagItem"><img src="images/tag.png" alt=""><p>标签</p></div>
+            <div class="tagItem"><img src="images/tag.png" alt=""><p>标签</p></div>
+            <div class="tagItem"><img src="images/tag.png" alt=""><p>标签</p></div>
+            <div class="tagItem"><img src="images/tag.png" alt=""><p>标签</p></div>
+            <div class="tagItem"><img src="images/tag.png" alt=""><p>标签</p></div>
+        </div>
+        <div class="hr1"></div>
+        <div class="column flex">
+            <div class="columnItem">
+                <div><img src="images/column1.png" alt=""></div>
+                <h2>分栏一</h2>
+                <p>分栏小标题</p>
+            </div>
+            <div class="columnItem">
+                <div><img src="images/column2.png" alt=""></div>
+                <h2>分栏二</h2>
+                <p>分栏小标题</p>
+            </div>
+            <div class="columnItem">
+                <div><img src="images/column3.png" alt=""></div>
+                <h2>分栏三</h2>
+                <p>分栏小标题</p>
+            </div>
+        </div>
+        <div class="module clearfix">
+            <div class="moduleTitle">模块一</div>
+            <div class="hr2"></div>
+            <div class="moduleItem flex">
+                <div class="moduleImg">
+                    <img src="images/module.png" alt=""></div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+            </div>
+            <div class="moduleItem flex">
+                <div class="moduleImg">
+                    <img src="images/module.png" alt=""></div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+            </div>
+        </div>
+        <div class="module clearfix">
+            <div class="moduleTitle">模块二</div>
+            <div class="hr2"></div>
+            <div class="moduleItem flex">
+                <div class="moduleImg">
+                    <img src="images/module.png" alt=""></div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+            </div>
+            <div class="moduleItem flex">
+                <div class="moduleImg">
+                    <img src="images/module.png" alt=""></div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+                <div class="moduleWord">
+                    <p>这是文案</p>
+                    <p>这是文案</p>
+                </div>
+            </div>
+        </div>
+        <div class="list clearfix">
+            <div class="listItem">
+                <img src="images/list.png" alt="">
+                <div class="listRight">
+                    <p class="listTitle">这是文章标题字号是22号的文章标题</p>
+                    <p class="listTag">文章来源&nbsp;&nbsp;&nbsp;&nbsp;22分钟前</p>
+                </div>
+            </div>
+            <div class="listItem">
+                <img src="images/list.png" alt="">
+                <div class="listRight">
+                    <p class="listTitle">这是另一个文章标题</p>
+                    <p class="listTag">文章来源&nbsp;&nbsp;&nbsp;&nbsp;22分钟前</p>
+                </div>
+            </div>
+            <div class="picItem">
+                <p class="picTitle">这是文章标题字号是22号的文章标题</p>
+                <div class="pic flex"><img src="images/list.png" alt=""><img src="images/list.png" alt=""><img src="images/list.png" alt=""></div>
+                <p class="picTag">文章来源&nbsp;&nbsp;&nbsp;&nbsp;22分钟前</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

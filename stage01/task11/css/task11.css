@@ -1,0 +1,238 @@
+html,body {
+    width: :100%;
+    height: 100%;
+    font-family: "Microsoft YaHei"，"Helvetica";
+    padding: 0;
+    margin: 0;
+    background-color: #f6f5ec;
+}
+.clearfix:after { 
+    content:"\200B"; 
+    display:block; 
+    height:0; 
+    clear:both; 
+} 
+.clearfix {*zoom:1;}/*IE/7/6*/
+.flex {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-flow: row wrap;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    list-style: none;
+}
+.container {
+    max-width: 10rem;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.headBar {
+    color: #fff;
+    font-size: 0.45rem;
+    background-color: #91d6d9;
+    height: 1.15rem;
+    width: 100%;
+    position: relative;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 1.15rem;
+    vertical-align: middle;
+}
+.headBar .headBack {
+    text-decoration: none;
+    color: #fff;
+    float: left;
+    left: 0.2rem;
+    vertical-align: middle;
+}
+.headBar .headBack img {
+    vertical-align: middle;
+    padding-right: 0.1rem;
+}
+.nav {
+    height: 1.15rem;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.15rem;
+    font-size: 0.45rem;
+}
+.nav .navItem {
+    flex: 1;
+    text-align: center;
+}
+.nav .navItem.selected {
+    border-bottom: 0.1rem solid #91d6d9;
+}
+.banner {
+    width: 100%;
+    height: 5.5rem;
+    background: #fff url('../images/banner.png') no-repeat;
+    background-size: cover;
+}
+.hr1 {
+    margin: 0 0.3rem 0.4rem 0.3rem;
+    border-bottom: 2px solid #ebebeb;
+}
+.tag {
+    width: 100%;
+    height: 3rem;
+    font-size: 0.35rem;
+    align-items: center;
+    background-color: #fff;
+}
+.tag .tagItem {
+    flex: 1;
+    text-align: center;
+}
+.tag .tagItem p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.column {
+    width: 100%;
+    height: 4.2rem;
+    padding: 0 0.2rem;
+    font-size: 0.35rem;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.column .columnItem {
+    flex: 1;
+    text-align: center;
+    border-right: 0.05rem solid #f2f2f2;
+}
+.column .columnItem:last-child {
+    border-right: 0.05rem solid transparent;
+}
+.column .columnItem div {
+    height: 2.2rem;
+}
+.columnItem div img {
+    /*display: table-cell;*/
+    vertical-align: middle;
+    padding: 0.3rem 0;
+    border-sizing: border-box;
+    height: 100%;
+}
+.column .columnItem h2 {
+    color: #5d5d5d;
+    margin: 0.3rem 0;
+    padding: 0;
+}
+.column .columnItem p {
+    color: #5d5d5d;
+    margin: 0;
+    padding: 0;
+}
+.module {
+  /*  height: 6.65rem;*/
+    width: 100%;
+    background-color: #fff;
+    padding: 0.4rem 0;
+    border-top: 0.35rem solid #f5f5f5;
+}
+.module .moduleTitle {
+    font-size: 0.45rem;
+    margin: 0 0.3rem;
+}
+.moduleItem {
+    padding: 0 0.3rem;
+}
+.moduleItem .moduleImg {
+    box-sizing: border-box;
+}
+.moduleItem .moduleImg img {
+    border: 3px solid #ffba34;
+    vertical-align: middle;
+}
+.module .moduleItem .moduleWord {
+    flex: 1;
+    font-size: 0.35rem;
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0;
+}
+.moduleItem div p {
+    text-align: center;
+    color: #000;
+    height: 100%;
+    margin: 0 0 0.3rem 0.3rem;
+    background-color: #f8f8f8;
+}
+.moduleItem div p:last-child {
+    margin: 0 0 0rem 0.3rem;
+}
+.hr2 {
+    margin: 0.4rem 0.3rem;
+    border-bottom: 2px solid #ebebeb;
+}
+.list {
+    width: 100%;
+    background-color: #fff;
+    border-top: 0.35rem solid #f5f5f5;
+}
+.listItem {
+    padding: 0.3rem 0.3rem;
+    border-bottom: 2px solid #ebebeb;
+    height: 2rem;
+}
+.listItem p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.45rem;
+}
+.listRight {
+    position: relative;
+    height: 2rem;
+}
+.listItem .listRight .listTag {
+    color: #c6c6c6; 
+    font-size: 0.35rem;
+    position: absolute;
+    bottom: 0;
+    left: 3.1rem;   
+}
+.listItem img {
+    float: left;
+    padding-right: 0.3rem;
+    vertical-align: middle;
+    width: 2.8rem;
+    height: 2rem;
+}
+.picItem {
+    padding: 0.3rem 0.3rem;
+    border-bottom: 2px solid #ebebeb;
+    height: 3.6rem;
+} 
+.pic img {
+    flex: 1;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    padding-right: 0.15rem;
+}
+.pic img:last-child {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.picItem .picTitle {
+    font-size: 0.45rem;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0.3rem;
+}
+.picItem .picTag {
+    font-size: 0.35rem;
+    color: #c6c6c6;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.3rem;
+}
